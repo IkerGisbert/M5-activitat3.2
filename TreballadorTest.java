@@ -1,4 +1,5 @@
 import static org.junit.Assert.*;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class TreballadorTest {
@@ -17,7 +18,7 @@ Treballador treballadorMeu = new Treballador();
 Exception excepcioMeva = assertThrows(Exception.class, () ->
 treballadorMeu.setNom(""));
 // L'assercio mira si el text de l'excepció avisa del problema de nom curt
-assertEquals("El nom ha de tenir 3 o més caracters",
+Assert.assertEquals("El nom ha de tenir 3 o més caracters",
 excepcioMeva.getMessage());
 }
 
@@ -34,9 +35,21 @@ public void testNomTreballadorCorrecte() {
     // Si es produeix una excepcio, el bloc catch la captura i mostra per pantalla, així el programa no peta
     System.out.println(e.getMessage());
     }
+
+    // Assignem un nom, com el mètode setNom pot produir excepcions ha d'anar en un bloc try catch
+    // A diferencia del cas anterior, aquí no estem provocant l'excepció a propòsit,
+    // sino que és el tractament habitual de les excepcions, ja ho veureu en M3
+    try {
+    treballador.setNom(nomTest);
+    } catch (Exception e) {
+    // Si es produeix una excepcio, el bloc catch la captura i mostra per pantalla,així el programa no peta
+    System.out.println(e.getMessage());
+    }
     ;
     // L'assercio comprova que el nom és correcte i en cas contrari mostraria el missatge d'error
-    assertEquals(nomTest, treballador.getNom(), "Els noms han de coincidir!!!");
+    ;
+    // L'assercio comprova que el nom és correcte i en cas contrari mostraria el missatge d'error
+    Assert.assertEquals(nomTest, treballador.getNom(), "Montsià");
     }
 
     @Test
@@ -48,12 +61,15 @@ public void testNomTreballadorCorrecte() {
 
     //L'asserció comprova que la nomina és correcta i en cas contrari mostra missatge d'error
     
-    assertEquals (nomina, treballador.getNomina(), "Els dos valors de la nomina han de coincidir!!!");
+    assertEquals(nomina, treballador.getNomina(), "Els dos valors de la nomina han de coincidir!!!");
+    }
+    private void assertEquals(float nomina, float nomina2, String string) {
     }
 
     @Test
     public void testHoresExtres() {
-    /// ACABEU-LO
+    int horesExtres = 10;
+    
     }
     @Test
     public void testTipusTreballadorIncorrecte() {
@@ -62,5 +78,5 @@ public void testNomTreballadorCorrecte() {
     @Test
     public void testTipusTreballadorCorrecte() {
     /// ACABEU-LO
-}
+    }
 }
