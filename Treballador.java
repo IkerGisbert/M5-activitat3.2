@@ -26,9 +26,7 @@ class Treballador {
     Treballador() {
     }
     void setNom(String nom) throws Exception {
-    // Si la longitud del nou nom es inferior a tres caracters llença
-    //excepcio
-    // avisant del problema
+    // Si la longitud del nou nom es inferior a tres caracters llença excepcio avisant del problema
     if (nom.length() < 3) {
         throw new Exception("El nom ha de tenir 3 o més caracters");
     }
@@ -39,8 +37,7 @@ class Treballador {
     return nomTreballador;
     }
     void setNomina(float euros) {
-    // Per simplicitat no comprovem que la nomina és superior a zero ja
-    //que el
+    // Per simplicitat no comprovem que la nomina és superior a zero ja que el
     // programa no fallarà per aquest error
     // i així ens estalviem les excepcions
     nominaTreballador = euros;
