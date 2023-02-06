@@ -60,7 +60,8 @@ class Treballador {
     BASE)) {
     // Si el tipus és vàlid, l'assignem
     tipusTreballador = tipus;
-    } else {// Si el tipus no és valid, creem excepció
+    } 
+    else {// Si el tipus no és valid, creem excepció
     throw new Exception("Tipus de treballador no vàlid");
     }
     }
